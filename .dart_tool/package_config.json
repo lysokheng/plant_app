@@ -2,6 +2,18 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "another_flushbar",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/another_flushbar-1.10.29",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "another_transformer_page_view",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/another_transformer_page_view-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "async",
       "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2",
       "packageUri": "lib/",
@@ -10,6 +22,12 @@
     {
       "name": "boolean_selector",
       "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "carousel_slider",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-4.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -62,10 +80,40 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_login",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_login-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/apple/Developer/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///Users/apple/Developer/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-10.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "get",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "js",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
     },
     {
       "name": "lints",
@@ -92,8 +140,38 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "nested",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "quiver",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "sign_in_button",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/sign_in_button-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -140,6 +218,54 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "url_launcher",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "url_launcher_android",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_android-6.0.17",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "url_launcher_ios",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_ios-6.0.17",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "url_launcher_linux",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_linux-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "url_launcher_macos",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "url_launcher_platform_interface",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "url_launcher_web",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "url_launcher_windows",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2",
       "packageUri": "lib/",
@@ -152,7 +278,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-08-08T04:29:55.116177Z",
+  "generated": "2022-08-08T10:34:51.529713Z",
   "generator": "pub",
   "generatorVersion": "2.17.1"
 }
