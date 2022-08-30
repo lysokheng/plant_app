@@ -152,6 +152,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "persistent_bottom_nav_bar",
+      "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/persistent_bottom_nav_bar-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "plugin_platform_interface",
       "rootUri": "file:///Users/apple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.2",
       "packageUri": "lib/",
@@ -278,7 +284,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-08-08T10:34:51.529713Z",
+  "generated": "2022-08-30T10:03:34.621737Z",
   "generator": "pub",
   "generatorVersion": "2.17.1"
 }
