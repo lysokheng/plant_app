@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:plant_app/pages/detail_plant_screen.dart';
+import 'package:get/get.dart';
+import 'package:plant_app/pages/detail_screen/spinach_detail_plant_screen.dart';
 
 class CameraScreen extends StatelessWidget {
   const CameraScreen({Key? key}) : super(key: key);
@@ -48,57 +49,72 @@ class CameraScreen extends StatelessWidget {
                       width: 20,
                     ),
                     Icon(
-                      Icons.menu,
+                      Icons.more_vert,
                       color: Colors.white,
                     ),
                   ],
                 ),
               ),
               const Spacer(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/images/leaf2.png'))),
-                  ),
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPlantScreen()));
-
-                    },
-                    child: Container(
-                      height: 63,
-                      width: 63,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white, width: 3)
-                      ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('assets/images/leaf2.png'))),
                     ),
-                  ),
-
-                  IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(
-                        Icons.refresh,
-                        color: Colors.white,
-                        size: 40,
-                      ))
-                ],
+                    Column(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Get.to(() => SpinachDetailScreen());
+                          },
+                          child: Container(
+                            height: 63,
+                            width: 63,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border:
+                                    Border.all(color: Colors.white, width: 3)),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Icon(
+                          Icons.circle,
+                          color: Colors.white,
+                          size: 5,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        const Text(
+                          'PHOTO',
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    IconButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        icon: const Icon(
+                          Icons.refresh,
+                          color: Colors.white,
+                          size: 40,
+                        )),
+                  ],
+                ),
               ),
-              SizedBox(height: 5,),
-              Icon(Icons.circle, color: Colors.white, size: 5,),
-              SizedBox(height: 10,),
-
-              const Text('PHOTO', style: TextStyle(
-                fontSize: 11,
-                color: Colors.white,
-              ),),
             ],
           ),
         ),

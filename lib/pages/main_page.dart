@@ -1,8 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:plant_app/pages/detail_plant_screen.dart';
+import 'package:get/get.dart';
+import 'package:plant_app/pages/camera_screen.dart';
 import 'package:plant_app/pages/profile_screen.dart';
 import 'package:plant_app/utils/colors.dart';
+
 import 'home_screen.dart';
 
 class MainPage extends StatefulWidget {
@@ -29,9 +31,10 @@ class _MainPageState extends State<MainPage> {
         children: [
         const Positioned(
           child: FractionalTranslation(
-            translation: Offset(0,0.24),
+            translation: Offset(0,0.20),
             child: CircleAvatar(
               backgroundColor: Colors.white,
+
               radius: 70,
             ),
           ),
@@ -41,10 +44,10 @@ class _MainPageState extends State<MainPage> {
             left: 42,
             child: FloatingActionButton(
               onPressed: () {
-
-              },
+                Get.to(() => CameraScreen());
+            },
               elevation: 0,
-              child: const Icon(Icons.add),
+              child: const Icon(Icons.add, size: 40,),
             ),
           ),
       ]

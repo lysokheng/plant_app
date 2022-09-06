@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:plant_app/pages/get_start_screen.dart';
+import 'package:plant_app/pages/home_screen.dart';
+import 'package:plant_app/pages/main_page.dart';
 import 'package:plant_app/utils/colors.dart';
-import 'package:plant_app/widgets/button.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -31,33 +34,46 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             //header
             Padding(
-              padding: const EdgeInsets.only(left: 30, right: 30, bottom: 15),
+              padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(
-                    Icons.arrow_back_ios,
-                    color: AppColors.signColor,
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const Text(
-                    'Hello',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                  IconButton(
+                    onPressed: () {
+                      Get.to(() => GetStartScreen());
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      color: AppColors.signColor,
                     ),
                   ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Text(
-                    'Let’s Learn More About Plants',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: AppColors.textColor,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        const Text(
+                          'Hello',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        Text(
+                          'Let’s Learn More About Plants',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: AppColors.textColor,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -118,6 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Checkbox(
+                    overlayColor: MaterialStateProperty.all(AppColors.mainColor),
                     checkColor: Colors.white,
                     activeColor: AppColors.mainColor,
                     value: isChecked,
@@ -151,18 +168,44 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.only(left: 30.0, right: 30, top: 15, bottom: 15),
               child: Column(
                 children: [
-                  Button(text: 'LOGIN'),
-                  const SizedBox(height: 20,),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextButton(
+                            onPressed: () {
+                              Get.to(() => MainPage());
+                            },
+                            style: ButtonStyle(
+                                padding: MaterialStateProperty.all(
+                                    const EdgeInsets.all(20)),
+                              backgroundColor: MaterialStateProperty.all(AppColors.mainColor),
+                              foregroundColor: MaterialStateProperty.all(Colors.white),
+
+                            ),
+                            child: Text('LOGIN', style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold
+                            ),)),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Don\'t Have Account? ', style: TextStyle(
-                        fontSize: 12,
-                        color: AppColors.textColor,
-
-                      ),),
-                      Text('Sign Up', style: TextStyle(
-                        fontSize: 12,
+                      Text(
+                        'Don\'t Have Account? ',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textColor,
+                        ),
+                      ),
+                      Text(
+                        'Sign Up',
+                        style: TextStyle(
+                          fontSize: 12,
                         color: AppColors.mainColor,
 
                       ),),

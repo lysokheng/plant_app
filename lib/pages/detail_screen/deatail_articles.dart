@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:plant_app/utils/colors.dart';
+import 'package:get/get.dart';
 
-class DetailPlantScreen extends StatelessWidget {
-  const DetailPlantScreen({Key? key}) : super(key: key);
+import '../../utils/colors.dart';
+
+class DetailArticles extends StatelessWidget {
+  const DetailArticles({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,29 +27,35 @@ class DetailPlantScreen extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.35,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/leaf.png'),
+                      image: AssetImage('assets/images/post2_big.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsets.only(left: 30, right: 30, top: 60),
+                    const EdgeInsets.only(left: 15, right: 15, top: 60),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         IconButton(
                           onPressed: () {
-                            Navigator.pop(context);
+                            Get.back();
                           },
                           icon: Icon(
                             Icons.arrow_back_ios,
                             color: Colors.white,
+                            size: 26,
                           ),
                         ),
                         Spacer(),
-                        Icon(
-                          Icons.menu,
-                          color: Colors.white,
+                        IconButton(
+                          onPressed: () {
+                          },
+                          icon: Icon(
+                            Icons.more_vert,
+                            color: Colors.white,
+                            size: 26,
+                          ),
                         ),
                       ],
                     ),
@@ -73,7 +81,7 @@ class DetailPlantScreen extends StatelessWidget {
                         )
                       ]),
                   child: const Icon(
-                    Icons.heart_broken_sharp,
+                    Icons.favorite,
                     color: Colors.white,
                     size: 26,
                   ),
@@ -89,16 +97,18 @@ class DetailPlantScreen extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      width: 106,
-                      height: 23,
+                      padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
+
                       decoration:
-                          BoxDecoration(color: Colors.blue.withOpacity(0.2)),
+                      BoxDecoration(color: Colors.blue.withOpacity(0.2)),
                       child: Center(
                         child: Text(
                           'VEGETABLES',
                           style: TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.w600,
+                            fontSize: 12,
+
                           ),
                         ),
                       ),
@@ -107,16 +117,17 @@ class DetailPlantScreen extends StatelessWidget {
                       width: 10,
                     ),
                     Container(
-                      width: 106,
-                      height: 23,
+
+                      padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
                       decoration:
-                          BoxDecoration(color: Colors.blue.withOpacity(0.2)),
+                      BoxDecoration(color: Colors.blue.withOpacity(0.2)),
                       child: Center(
                         child: Text(
-                          'VEGETABLES',
+                          'GARDEN',
                           style: TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.w600,
+                            fontSize: 12,
                           ),
                         ),
                       ),
@@ -124,122 +135,86 @@ class DetailPlantScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 15,
                 ),
+                //title
                 Text(
-                  'Spinach',
+                  'Even on Urban Excursions, Finding Mother Nature\'s Charms',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: AppColors.mainBlackColor,
-                    fontSize: 27,
+                    fontSize: 20,
+                    height: 1.5
                   ),
+
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 20,
                 ),
+
                 Row(
                   children: [
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow.shade700,
+                    CircleAvatar(
+                      backgroundImage: AssetImage(
+                        'assets/images/profile1_big.png',
+                      ),
+                      radius: 20,
                     ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow.shade700,
+                    SizedBox(
+                      width: 10,
                     ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow.shade700,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Shylla Monic',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.mainBlackColor,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        SizedBox(height: 5,),
+                        Text(
+                          '2019 . 01 . 01',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: AppColors.textColor,
+                          ),
+                        ),
+                      ],
                     ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow.shade700,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.grey.withOpacity(0.5),
-                    ),
-                    Text(
-                      '  4.5',
-                      style: TextStyle(
-                          color: AppColors.mainBlackColor,
-                          fontWeight: FontWeight.w500),
+                    Spacer(),
+                    Container(
+                      padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                      decoration: BoxDecoration(
+                        color: AppColors.mainColor,
+                        borderRadius: BorderRadius.circular(90)
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.add, size: 12, color: Colors.white,),
+                          SizedBox(width: 5,),
+                          Text('Follow', style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10
+                          ),)
+                        ],
+                      ),
                     )
+
                   ],
                 ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'Kingdom',
-                      style: TextStyle(
-                        color: AppColors.mainBlackColor,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 90,
-                    ),
-                    Text(
-                      'Family',
-                      style: TextStyle(
-                        color: AppColors.mainBlackColor,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'Plantae',
-                      style: TextStyle(
-                        color: AppColors.textColor,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 100,
-                    ),
-                    Text(
-                      'Amaranthaceae',
-                      style: TextStyle(
-                        color: AppColors.textColor,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
+
+                SizedBox(height: 20,),
                 Text(
-                  'Description',
-                  style: TextStyle(
-                    color: AppColors.mainBlackColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Text(
-                  'Spinach is thought to have originated in ancient Persia (modern Iran and neighboring countries). It is not known by whom, or when, spinach was introduced to India, but the plant was subsequ ently introduced to ancient China, where it was known as "Persian vegetable"',
+                  'Public parks aside, getting a dose of nature can be a tricky task during an urban escape. But nat ure should and can fit into that city getaway, acc ording to Kally Ellis, the founder of the London fl orist company McQueens and the in-house florist for the Maybourne Hotel Group. “Connecting with the natural world wherever you are is a great antid ote to jet lag and travel tiredness,” she said. “Plan ts and flowers can refresh us, boost our energy and help us recalibrate.”',
                   style: TextStyle(
                     color: AppColors.textColor,
                     fontWeight: FontWeight.w400,
                     fontSize: 14,
-                    height: 1.5,
+                    height: 1.8,
                   ),
                 ),
               ],
