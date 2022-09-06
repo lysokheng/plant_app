@@ -18,17 +18,23 @@ class IntroPage1 extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(),
-              Text('Identify Plants', style: TextStyle(
-                  fontSize: 20, fontWeight: FontWeight.w600
-              ),),
-              SizedBox(height: 30,),
+              const Spacer(),
+              const Text(
+                'Identify Plants',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 30.0, right: 30),
-                child: Text('You can identify the plants you don\'t know through your camera', textAlign: TextAlign.center,
+                child: Text(
+                  'You can identify the plants you don\'t know through your camera',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: AppColors.textColor,
-                  ),),
+                  ),
+                ),
               ),
             ],
           )

@@ -1,7 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:plant_app/pages/home_screen.dart';
 import 'package:plant_app/pages/intro_screens/intro_page_1.dart';
 import 'package:plant_app/pages/intro_screens/intro_page_2.dart';
 import 'package:plant_app/pages/intro_screens/intro_page_3.dart';
@@ -10,7 +8,7 @@ import 'package:plant_app/utils/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class GetStartScreen extends StatefulWidget {
-  GetStartScreen({Key? key}) : super(key: key);
+  const GetStartScreen({Key? key}) : super(key: key);
 
   @override
   State<GetStartScreen> createState() => _GetStartScreenState();
@@ -22,7 +20,7 @@ class _GetStartScreenState extends State<GetStartScreen> {
   int currentIndex = 0;
 
   // controller to keep track of where page we're on
-  PageController _controller = PageController();
+  final PageController _controller = PageController();
 
   // keep track of if we are on the last page or not
   bool onLastPage = false;
@@ -44,7 +42,7 @@ class _GetStartScreenState extends State<GetStartScreen> {
                   onLastPage = (index == 2);
                 });
               },
-              children: [
+              children: const [
                 IntroPage1(),
                 IntroPage2(),
                 IntroPage3(),
@@ -87,18 +85,18 @@ class _GetStartScreenState extends State<GetStartScreen> {
               children: [
                 Expanded(
                   child: TextButton(
-                      onPressed: () {
-                        Get.to(() => LoginScreen());
-                      },
-                      style: ButtonStyle(
-                          padding: MaterialStateProperty.all(
-                              const EdgeInsets.all(20)),
-                          backgroundColor:
-                              MaterialStateProperty.all(AppColors.mainColor),
-                          foregroundColor:
-                              MaterialStateProperty.all(Colors.white)),
-                      child: Text('SIGN UP')),
-                ),
+                            onPressed: () {
+                              Get.to(() => LoginScreen());
+                            },
+                            style: ButtonStyle(
+                                padding: MaterialStateProperty.all(
+                                    const EdgeInsets.all(20)),
+                                backgroundColor: MaterialStateProperty.all(
+                                    AppColors.mainColor),
+                                foregroundColor:
+                                    MaterialStateProperty.all(Colors.white)),
+                            child: const Text('SIGN UP')),
+                      ),
               ],
             )),
           ) : Padding(
@@ -109,18 +107,19 @@ class _GetStartScreenState extends State<GetStartScreen> {
                     Expanded(
                       child: TextButton(
                           onPressed: () {
-                            _controller.nextPage(duration: Duration(milliseconds: 500), curve: Curves.easeIn);
-
-                          },
-                          style: ButtonStyle(
-                              padding: MaterialStateProperty.all(
-                                  const EdgeInsets.all(20)),
-                              backgroundColor:
-                              MaterialStateProperty.all(AppColors.mainColor),
-                              foregroundColor:
-                              MaterialStateProperty.all(Colors.white)),
-                          child: Text('NEXT')),
-                    ),
+                              _controller.nextPage(
+                                  duration: const Duration(milliseconds: 500),
+                                  curve: Curves.easeIn);
+                            },
+                            style: ButtonStyle(
+                                padding: MaterialStateProperty.all(
+                                    const EdgeInsets.all(20)),
+                                backgroundColor: MaterialStateProperty.all(
+                                    AppColors.mainColor),
+                                foregroundColor:
+                                    MaterialStateProperty.all(Colors.white)),
+                            child: const Text('NEXT')),
+                      ),
                   ],
                 )),
           )

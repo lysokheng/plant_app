@@ -72,7 +72,7 @@ class CameraScreen extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Get.to(() => SpinachDetailScreen());
+                            Get.to(() => const SpinachDetailScreen());
                           },
                           child: Container(
                             height: 63,
@@ -83,15 +83,15 @@ class CameraScreen extends StatelessWidget {
                                     Border.all(color: Colors.white, width: 3)),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
-                        Icon(
+                        const Icon(
                           Icons.circle,
                           color: Colors.white,
                           size: 5,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         const Text(

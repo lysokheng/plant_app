@@ -12,6 +12,13 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          //background
+          Positioned(
+              child: SizedBox(
+            width: MediaQuery.of(context).size.width * 1,
+            height: MediaQuery.of(context).size.height * 1,
+          )),
+
           //header
           Positioned(
             top: 0,
@@ -22,7 +29,7 @@ class ProfileScreen extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               children: [
                 Positioned(
-                  child: Container(
+                  child: SizedBox(
                     width: MediaQuery.of(context).size.width * 1,
                     height: MediaQuery.of(context).size.height * 0.31,
                   ),
@@ -52,7 +59,7 @@ class ProfileScreen extends StatelessWidget {
                                 onPressed: () {
                                   Get.back();
                                 },
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_back_ios,
                                   color: Colors.white,
                                   size: 26,
@@ -61,18 +68,18 @@ class ProfileScreen extends StatelessWidget {
                               Center(
                                 child: Column(
                                   children: [
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
-                                    CircleAvatar(
+                                    const CircleAvatar(
                                       backgroundImage: AssetImage(
                                           'assets/images/taylor_big.png'),
                                       radius: 40,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Taylor Swift',
                                       style: TextStyle(
                                         fontSize: 23,
@@ -80,12 +87,12 @@ class ProfileScreen extends StatelessWidget {
                                         color: Colors.white,
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
                                     Row(
                                       children: [
-                                        Icon(
+                                        const Icon(
                                           Icons.location_on_sharp,
                                           color: Colors.white,
                                         ),
@@ -105,7 +112,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.more_vert,
                                   color: Colors.white,
                                   size: 26,
@@ -122,9 +129,74 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
 
-          //body
+          //category
           Positioned(
             top: 260,
+            right: 0,
+            left: 0,
+            // bottom: 0,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  left: 15, right: 15, top: 20, bottom: 40),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(
+                        left: 20, right: 20, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: AppColors.buttonBackgroundColor,
+                      borderRadius: BorderRadius.circular(23.5),
+                    ),
+                    child: Text(
+                      'ARTICLES',
+                      style: TextStyle(
+                        color: Colors.black.withOpacity(0.3),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                        left: 20, right: 20, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: AppColors.activeColor,
+                      borderRadius: BorderRadius.circular(23.5),
+                    ),
+                    child: const Text(
+                      'SPECIES',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                        left: 20, right: 20, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: AppColors.buttonBackgroundColor,
+                      borderRadius: BorderRadius.circular(23.5),
+                    ),
+                    child: Text(
+                      'LIKES',
+                      style: TextStyle(
+                        color: Colors.black.withOpacity(0.3),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          //body
+          Positioned(
+            // top: 0,
             left: 0,
             right: 0,
             bottom: 0,
@@ -132,63 +204,6 @@ class ProfileScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 15, right: 15, top: 20, bottom: 40),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(
-                              left: 20, right: 20, top: 10, bottom: 10),
-                          decoration: BoxDecoration(
-                            color: AppColors.buttonBackgroundColor,
-                            borderRadius: BorderRadius.circular(23.5),
-                          ),
-                          child: Text(
-                            'ARTICLES',
-                            style: TextStyle(
-                              color: Colors.black.withOpacity(0.3),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(
-                              left: 20, right: 20, top: 10, bottom: 10),
-                          decoration: BoxDecoration(
-                            color: AppColors.activeColor,
-                            borderRadius: BorderRadius.circular(23.5),
-                          ),
-                          child: Text(
-                            'SPECIES',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(
-                              left: 20, right: 20, top: 10, bottom: 10),
-                          decoration: BoxDecoration(
-                            color: AppColors.buttonBackgroundColor,
-                            borderRadius: BorderRadius.circular(23.5),
-                          ),
-                          child: Text(
-                            'LIKES',
-                            style: TextStyle(
-                              color: Colors.black.withOpacity(0.3),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                   Padding(
                     padding: const EdgeInsets.only(left: 15, right: 15),
                     child: Text(
@@ -199,7 +214,7 @@ class ProfileScreen extends StatelessWidget {
                           color: AppColors.mainBlackColor),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Padding(
@@ -210,7 +225,7 @@ class ProfileScreen extends StatelessWidget {
                           Icons.radio_button_checked,
                           color: AppColors.activeColor,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Text(
@@ -238,7 +253,7 @@ class ProfileScreen extends StatelessWidget {
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.8,
                       height: MediaQuery.of(context).size.height * 0.37,
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(3),
                         boxShadow: [
@@ -258,7 +273,7 @@ class ProfileScreen extends StatelessWidget {
                             crossAxisCellCount: 1,
                             mainAxisCellCount: 2,
                             child: Container(
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   image: DecorationImage(
                                       image: AssetImage(
                                           'assets/images/big_plant1.png'))),
@@ -268,7 +283,7 @@ class ProfileScreen extends StatelessWidget {
                             crossAxisCellCount: 1,
                             mainAxisCellCount: 1,
                             child: Container(
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   image: DecorationImage(
                                       image: AssetImage(
                                           'assets/images/big_plant2.png'))),
@@ -278,7 +293,7 @@ class ProfileScreen extends StatelessWidget {
                             crossAxisCellCount: 1,
                             mainAxisCellCount: 1,
                             child: Container(
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   image: DecorationImage(
                                       image: AssetImage(
                                           'assets/images/big_plant3.png'))),

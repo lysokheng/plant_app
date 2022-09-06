@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:plant_app/utils/colors.dart';
 import 'package:get/get.dart';
+import 'package:plant_app/utils/colors.dart';
 
 class CircleCactusDetailScreen extends StatelessWidget {
   const CircleCactusDetailScreen({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class CircleCactusDetailScreen extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             children: [
               Positioned(
-                child: Container(
+                child: SizedBox(
                   width: MediaQuery.of(context).size.width * 1,
                   height: MediaQuery.of(context).size.height * 0.38,
                 ),
@@ -40,17 +40,16 @@ class CircleCactusDetailScreen extends StatelessWidget {
                           onPressed: () {
                             Get.back();
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.arrow_back_ios,
                             color: Colors.white,
                             size: 26,
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         IconButton(
-                          onPressed: () {
-                          },
-                          icon: Icon(
+                          onPressed: () {},
+                          icon: const Icon(
                             Icons.more_vert,
                             color: Colors.white,
                             size: 26,
@@ -76,7 +75,7 @@ class CircleCactusDetailScreen extends StatelessWidget {
                           color: Colors.black.withOpacity(0.2),
                           blurRadius: 7,
                           spreadRadius: 5,
-                          offset: Offset(0, 0),
+                          offset: const Offset(0, 0),
                         )
                       ]),
                   child: const Icon(
@@ -96,45 +95,43 @@ class CircleCactusDetailScreen extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
-
+                      padding: const EdgeInsets.only(
+                          left: 15, right: 15, top: 5, bottom: 5),
                       decoration:
-                      BoxDecoration(color: Colors.blue.withOpacity(0.2)),
-                      child: Center(
+                          BoxDecoration(color: Colors.blue.withOpacity(0.2)),
+                      child: const Center(
                         child: Text(
                           'DANGER',
                           style: TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.w600,
                             fontSize: 12,
-
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Container(
-                      padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
-
+                      padding: const EdgeInsets.only(
+                          left: 15, right: 15, top: 5, bottom: 5),
                       decoration:
-                      BoxDecoration(color: Colors.blue.withOpacity(0.2)),
-                      child: Center(
+                          BoxDecoration(color: Colors.blue.withOpacity(0.2)),
+                      child: const Center(
                         child: Text(
                           'DECORATION',
                           style: TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.w600,
                             fontSize: 12,
-
                           ),
                         ),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Text(
@@ -145,7 +142,7 @@ class CircleCactusDetailScreen extends StatelessWidget {
                     fontSize: 27,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Row(
@@ -178,7 +175,7 @@ class CircleCactusDetailScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
@@ -191,7 +188,7 @@ class CircleCactusDetailScreen extends StatelessWidget {
                         fontSize: 14,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 90,
                     ),
                     Text(
@@ -204,7 +201,7 @@ class CircleCactusDetailScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Row(
@@ -217,7 +214,7 @@ class CircleCactusDetailScreen extends StatelessWidget {
                         fontSize: 14,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 100,
                     ),
                     Text(
@@ -230,7 +227,7 @@ class CircleCactusDetailScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Text(
@@ -241,7 +238,7 @@ class CircleCactusDetailScreen extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Text(

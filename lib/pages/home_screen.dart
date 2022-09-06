@@ -16,10 +16,10 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           //background
-          Positioned(child: Container(
+          Positioned(
+              child: SizedBox(
             width: MediaQuery.of(context).size.width * 1,
             height: MediaQuery.of(context).size.height * 1,
-
           )),
           //header
           Positioned(
@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
               Positioned(
                 child: Container(
                   width: MediaQuery.of(context).size.width * 1,
-                  height: MediaQuery.of(context).size.height * 0.28,
+                  height: MediaQuery.of(context).size.height * 0.27,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.cover,
@@ -71,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                         const Spacer(),
                         GestureDetector(
                           onTap: () {
-                            Get.to(() => ProfileScreen());
+                            Get.to(() => const ProfileScreen());
                           },
                           child: const CircleAvatar(
                             radius: 23,
@@ -89,29 +89,34 @@ class HomeScreen extends StatelessWidget {
               Positioned(
                 child: Container(
                   padding: const EdgeInsets.only(left: 30, right: 30),
-                  child: TextField(
-                    cursorColor: AppColors.mainColor,
-                    decoration: InputDecoration(
-                      prefixIconColor: AppColors.mainColor,
-                      prefixIcon: Icon(
-                        Icons.search,
-                        color: AppColors.signColor,
-                        size: 20,
+                  child: Material(
+                    borderRadius: BorderRadius.circular(25),
+                    elevation: 20.0,
+                    shadowColor: Colors.black.withOpacity(0.2),
+                    child: TextField(
+                      cursorColor: AppColors.mainColor,
+                      decoration: InputDecoration(
+                        prefixIconColor: AppColors.mainColor,
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: AppColors.searchHintColor,
+                          size: 20,
+                        ),
+                        filled: true,
+                        fillColor: Colors.white,
+                        hintText: 'Search For Plants',
+                        hintStyle: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.searchHintColor,
+                            fontWeight: FontWeight.w300),
+                        contentPadding: const EdgeInsets.only(top: 30),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(30)),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(30)),
                       ),
-                      filled: true,
-                      fillColor: Colors.white,
-                      hintText: 'Search For Plants',
-                      hintStyle: TextStyle(
-                          fontSize: 14,
-                          color: AppColors.signColor,
-                          fontWeight: FontWeight.w300),
-                      contentPadding: const EdgeInsets.only(top: 30),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(30)),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(30)),
                     ),
                   ),
                 ),
@@ -136,7 +141,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Get.to(() => CameraScreen());
+                            Get.to(() => const CameraScreen());
                           },
                           child: Container(
                             height: 76,
@@ -153,7 +158,7 @@ class HomeScreen extends StatelessWidget {
                                 ]),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
+                              children: const [
                                 Icon(
                                   Icons.camera_alt,
                                   color: Colors.white,
@@ -176,7 +181,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Get.to(() => SpeciesScreen());
+                            Get.to(() => const SpeciesScreen());
                           },
                           child: Container(
                             height: 76,
@@ -216,7 +221,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Get.to(() => ArticleScreen());
+                            Get.to(() => const ArticleScreen());
                           },
                           child: Container(
                             height: 76,
@@ -235,7 +240,7 @@ class HomeScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.book,
+                                  Icons.menu_book_outlined,
                                   color: AppColors.mainColor,
                                   size: 27,
                                 ),

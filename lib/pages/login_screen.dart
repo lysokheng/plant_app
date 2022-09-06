@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:plant_app/pages/get_start_screen.dart';
-import 'package:plant_app/pages/home_screen.dart';
 import 'package:plant_app/pages/main_page.dart';
 import 'package:plant_app/utils/colors.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -41,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      Get.to(() => GetStartScreen());
+                      Get.to(() => const GetStartScreen());
                     },
                     icon: Icon(
                       Icons.arrow_back_ios,
@@ -173,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Expanded(
                         child: TextButton(
                             onPressed: () {
-                              Get.to(() => MainPage());
+                              Get.to(() => const MainPage());
                             },
                             style: ButtonStyle(
                                 padding: MaterialStateProperty.all(
@@ -182,10 +181,11 @@ class _LoginScreenState extends State<LoginScreen> {
                               foregroundColor: MaterialStateProperty.all(Colors.white),
 
                             ),
-                            child: Text('LOGIN', style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold
-                            ),)),
+                            child: const Text(
+                              'LOGIN',
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.bold),
+                            )),
                       ),
                     ],
                   ),

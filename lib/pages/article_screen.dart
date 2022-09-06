@@ -15,7 +15,7 @@ class ArticleScreen extends StatelessWidget {
           //header
           Stack(alignment: Alignment.bottomCenter, children: [
             Positioned(
-                child: Container(
+                child: SizedBox(
               width: MediaQuery.of(context).size.width * 1,
               height: MediaQuery.of(context).size.height * 0.28,
             )),
@@ -43,17 +43,16 @@ class ArticleScreen extends StatelessWidget {
                             onPressed: () {
                               Get.back();
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.arrow_back_ios,
                               color: Colors.white,
                               size: 26,
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           IconButton(
-                            onPressed: () {
-                            },
-                            icon: Icon(
+                            onPressed: () {},
+                            icon: const Icon(
                               Icons.more_vert,
                               color: Colors.white,
                               size: 26,
@@ -62,8 +61,8 @@ class ArticleScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 30, right: 30),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 30, right: 30),
                       child: Text(
                         'Articles',
                         style: TextStyle(
@@ -82,28 +81,33 @@ class ArticleScreen extends StatelessWidget {
             Positioned(
               child: Container(
                 padding: const EdgeInsets.only(left: 30, right: 30),
-                child: TextField(
-                  cursorColor: AppColors.mainColor,
-                  decoration: InputDecoration(
-                    prefixIconColor: AppColors.mainColor,
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: AppColors.signColor,
+                child: Material(
+                  borderRadius: BorderRadius.circular(25),
+                  elevation: 20.0,
+                  shadowColor: Colors.black.withOpacity(0.2),
+                  child: TextField(
+                    cursorColor: AppColors.mainColor,
+                    decoration: InputDecoration(
+                      prefixIconColor: AppColors.mainColor,
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: AppColors.searchHintColor,
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                      hintText: 'Search For Articles',
+                      hintStyle: TextStyle(
+                        fontSize: 14,
+                        color: AppColors.searchHintColor,
+                      ),
+                      contentPadding: const EdgeInsets.only(top: 30),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(30)),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(30)),
                     ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    hintText: 'Search For Articles',
-                    hintStyle: TextStyle(
-                      fontSize: 14,
-                      color: AppColors.signColor,
-                    ),
-                    contentPadding: const EdgeInsets.only(top: 30),
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(30)),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(30)),
                   ),
                 ),
               ),
@@ -112,7 +116,7 @@ class ArticleScreen extends StatelessWidget {
 
           Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
@@ -134,7 +138,7 @@ class ArticleScreen extends StatelessWidget {
                     Container(
                       width: MediaQuery.of(context).size.width * 1,
                       height: MediaQuery.of(context).size.height * 0.17,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           borderRadius: BorderRadius.only(
                               topRight: Radius.circular(13),
                               topLeft: Radius.circular(13)),
@@ -159,13 +163,13 @@ class ArticleScreen extends StatelessWidget {
                           left: 15, right: 15, bottom: 15),
                       child: Row(
                         children: [
-                          CircleAvatar(
+                          const CircleAvatar(
                             backgroundImage: AssetImage(
                               'assets/images/profile.png',
                             ),
                             radius: 16,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Column(
@@ -179,7 +183,9 @@ class ArticleScreen extends StatelessWidget {
                                   color: AppColors.mainBlackColor,
                                 ),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(
+                                height: 5,
+                              ),
                               Text(
                                 '2019 . 01 . 01',
                                 style: TextStyle(
@@ -189,23 +195,30 @@ class ArticleScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Spacer(),
-                          Icon(Icons.bookmark_border, color: Colors.black.withOpacity(0.2),),
-                          SizedBox(width: 15,),
-                          Icon(Icons.heart_broken_outlined, color: Colors.black.withOpacity(0.2),)
-
+                          const Spacer(),
+                          Icon(
+                            Icons.bookmark_border,
+                            color: Colors.black.withOpacity(0.2),
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Icon(
+                            Icons.heart_broken_outlined,
+                            color: Colors.black.withOpacity(0.2),
+                          )
                         ],
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(() => DetailArticles());
+                  Get.to(() => const DetailArticles());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.84,
@@ -226,7 +239,7 @@ class ArticleScreen extends StatelessWidget {
                       Container(
                         width: MediaQuery.of(context).size.width * 1,
                         height: MediaQuery.of(context).size.height * 0.17,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(13),
                                 topLeft: Radius.circular(13)),
@@ -251,13 +264,13 @@ class ArticleScreen extends StatelessWidget {
                             left: 15, right: 15, bottom: 15),
                         child: Row(
                           children: [
-                            CircleAvatar(
+                            const CircleAvatar(
                               backgroundImage: AssetImage(
                                 'assets/images/profile1.png',
                               ),
                               radius: 16,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Column(
@@ -271,7 +284,9 @@ class ArticleScreen extends StatelessWidget {
                                     color: AppColors.mainBlackColor,
                                   ),
                                 ),
-                                SizedBox(height: 5,),
+                                const SizedBox(
+                                  height: 5,
+                                ),
                                 Text(
                                   '2019 . 01 . 01',
                                   style: TextStyle(
@@ -281,11 +296,18 @@ class ArticleScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Spacer(),
-                            Icon(Icons.bookmark_border, color: Colors.black.withOpacity(0.2),),
-                            SizedBox(width: 15,),
-                            Icon(Icons.heart_broken_outlined, color: Colors.black.withOpacity(0.2),)
-
+                            const Spacer(),
+                            Icon(
+                              Icons.bookmark_border,
+                              color: Colors.black.withOpacity(0.2),
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Icon(
+                              Icons.heart_broken_outlined,
+                              color: Colors.black.withOpacity(0.2),
+                            )
                           ],
                         ),
                       ),

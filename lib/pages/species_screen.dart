@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:plant_app/pages/list_plants_screen/cactus_screen.dart';
+
 import '../utils/colors.dart';
 
 class SpeciesScreen extends StatelessWidget {
@@ -13,7 +14,8 @@ class SpeciesScreen extends StatelessWidget {
         children: [
           //header
           Stack(alignment: Alignment.bottomCenter, children: [
-            Positioned(child: Container(
+            Positioned(
+                child: SizedBox(
               width: MediaQuery.of(context).size.width * 1,
               height: MediaQuery.of(context).size.height * 0.28,
             )),
@@ -43,18 +45,16 @@ class SpeciesScreen extends StatelessWidget {
                             onPressed: () {
                               Get.back();
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.arrow_back_ios,
                               color: Colors.white,
                               size: 26,
-
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           IconButton(
-                            onPressed: () {
-                            },
-                            icon: Icon(
+                            onPressed: () {},
+                            icon: const Icon(
                               Icons.more_vert,
                               color: Colors.white,
                               size: 26,
@@ -63,13 +63,16 @@ class SpeciesScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 30, right: 30),
-                      child: Text('Species', style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 30, right: 30),
+                      child: Text(
+                        'Species',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -80,28 +83,35 @@ class SpeciesScreen extends StatelessWidget {
             Positioned(
               child: Container(
                 padding: const EdgeInsets.only(left: 30, right: 30),
-                child: TextField(
-                  cursorColor: AppColors.mainColor,
-                  decoration: InputDecoration(
-                    prefixIconColor: AppColors.mainColor,
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: AppColors.signColor,
+                child: Material(
+                  borderRadius: BorderRadius.circular(25),
+                  elevation: 20.0,
+                  shadowColor: Colors.black.withOpacity(0.2),
+                  child: TextField(
+                    cursorColor: AppColors.mainColor,
+                    decoration: InputDecoration(
+                      prefixIconColor: AppColors.mainColor,
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: AppColors.searchHintColor,
+                        size: 20,
+
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                      hintText: 'Search For Species',
+                      hintStyle: TextStyle(
+                        fontSize: 14,
+                        color: AppColors.searchHintColor,
+                      ),
+                      contentPadding: const EdgeInsets.only(top: 30),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(30)),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(30)),
                     ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    hintText: 'Search For Plants',
-                    hintStyle: TextStyle(
-                      fontSize: 14,
-                      color: AppColors.signColor,
-                    ),
-                    contentPadding: const EdgeInsets.only(top: 30),
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(30)),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(30)),
                   ),
                 ),
               ),
@@ -126,7 +136,7 @@ class SpeciesScreen extends StatelessWidget {
                     ),),
                     GestureDetector(
                       onTap: () {
-                        Get.to(() => CactusScreen());
+                        Get.to(() => const CactusScreen());
                       },
                       child: Text('CACTUS', style: TextStyle(
                         color: AppColors.textColor,
@@ -155,28 +165,39 @@ class SpeciesScreen extends StatelessWidget {
                     ),),
                     Text('CIRSIUM', style: TextStyle(
                       color: AppColors.textColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      height: 2,
-                    ),),
-                    Text('CISSUS', style: TextStyle(
-                      color: AppColors.textColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      height: 2,
-                    ),),
-                    SizedBox(height: 10,),
-                    Text('D', style: TextStyle(
-                      color: AppColors.mainColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 17,
-                      height: 2,
-                    ),),
-                    Text('DIERAMA', style: TextStyle(
-                      color: AppColors.textColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      height: 2,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        height: 2,
+                      ),
+                    ),
+                    Text(
+                      'CISSUS',
+                      style: TextStyle(
+                        color: AppColors.textColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        height: 2,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'D',
+                      style: TextStyle(
+                        color: AppColors.mainColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,
+                        height: 2,
+                      ),
+                    ),
+                    Text(
+                      'DIERAMA',
+                      style: TextStyle(
+                        color: AppColors.textColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        height: 2,
                     ),),
                     Text('DIGITALIS', style: TextStyle(
                       color: AppColors.textColor,
@@ -198,50 +219,67 @@ class SpeciesScreen extends StatelessWidget {
                     ),),
                     Text('ECHINACEA', style: TextStyle(
                       color: AppColors.textColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      height: 2,
-                    ),),
-                    Text('ECHINOPS', style: TextStyle(
-                      color: AppColors.textColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      height: 2,
-                    ),),
-                    SizedBox(height: 10,),
-                    Text('E', style: TextStyle(
-                      color: AppColors.mainColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 17,
-                      height: 2,
-                    ),),
-                    Text('ECHINACEA', style: TextStyle(
-                      color: AppColors.textColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      height: 2,
-                    ),),
-                    Text('ECHINOPS', style: TextStyle(
-                      color: AppColors.textColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      height: 2,
-                    ),),
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        height: 2,
+                      ),
+                    ),
+                    Text(
+                      'ECHINOPS',
+                      style: TextStyle(
+                        color: AppColors.textColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        height: 2,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'E',
+                      style: TextStyle(
+                        color: AppColors.mainColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,
+                        height: 2,
+                      ),
+                    ),
+                    Text(
+                      'ECHINACEA',
+                      style: TextStyle(
+                        color: AppColors.textColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        height: 2,
+                      ),
+                    ),
+                    Text(
+                      'ECHINOPS',
+                      style: TextStyle(
+                        color: AppColors.textColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        height: 2,
+                      ),
+                    ),
                   ],
                 ),
 
-                Spacer(),
+                const Spacer(),
 
                 //alphabets
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('#', style: TextStyle(
-                      color: AppColors.textColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12,
-                      height: 1.5,
-                    ),),
+                    Text(
+                      '#',
+                      style: TextStyle(
+                        color: AppColors.textColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12,
+                        height: 1.5,
+                      ),),
                     Text('A', style: TextStyle(
                       color: AppColors.textColor,
                       fontWeight: FontWeight.w400,

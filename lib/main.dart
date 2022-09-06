@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:plant_app/pages/get_start_screen.dart';
-import 'package:plant_app/pages/home_screen.dart';
-import 'package:plant_app/pages/main_page.dart';
 import 'package:plant_app/utils/colors.dart';
+import 'package:plant_app/widgets/dismiss_keyboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       color: AppColors.backgroundColor,
-      home: GetStartScreen(),
+      home: const GetStartScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

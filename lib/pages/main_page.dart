@@ -18,8 +18,8 @@ class _MainPageState extends State<MainPage> {
   int selectedIndex = 0;
 
   List<Widget> lstWidgets = [
-    HomeScreen(),
-    ProfileScreen(),
+    const HomeScreen(),
+    const ProfileScreen(),
   ];
 
   @override
@@ -44,7 +44,7 @@ class _MainPageState extends State<MainPage> {
             left: 42,
             child: FloatingActionButton(
               onPressed: () {
-                Get.to(() => CameraScreen());
+                Get.to(() => const CameraScreen());
             },
               elevation: 0,
               child: const Icon(Icons.add, size: 40,),
